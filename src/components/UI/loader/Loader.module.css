@@ -1,0 +1,16 @@
+.loader{
+    border: dashed 3px #2c3e50;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin-top: 20px;
+    animation: load infinite 2s linear;
+}
+@keyframes load {
+    from{
+       transform: rotate(0deg) scale(1);
+    }
+    to{
+        transform: rotate(360deg) scale(1.3);
+    }
+}

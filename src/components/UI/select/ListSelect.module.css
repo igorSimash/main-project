@@ -1,0 +1,17 @@
+.mySelect {
+    margin-left: 15px;
+    background-color: rgba(146,138,145,0.12);
+    border: solid 2px darkmagenta;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: Arial, serif;
+    padding: 3px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    height: 30px;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+.mySelect:hover{
+    background-color: white;
+}

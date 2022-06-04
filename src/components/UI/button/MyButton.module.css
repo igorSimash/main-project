@@ -1,0 +1,18 @@
+.myButton{
+    color: black;
+    border-radius: 7px;
+    border: solid 2px darkmagenta;
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    background-color: rgba(146,138,145,0.12);
+    cursor: pointer;
+    font-weight: 500;
+    font-family: Arial, serif;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+    margin-left: 10px;
+}
+.myButton:hover{
+    color: white;
+    background-color: darkmagenta;
+}
