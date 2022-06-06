@@ -24,12 +24,6 @@ const DashBoard = () => {
                     </nav>
                 </header>
             </div>
-            <Routes>
-                <Route path="/lists" element={<Lists/>}/>
-                <Route path="/calculator" element={<Calculator/>}/>
-                <Route path="/currency" element={<CurrencySelect/>}/>
-                <Route path="/counter" element={<Counter/>}/>
-            </Routes>
         </>
     );
 };

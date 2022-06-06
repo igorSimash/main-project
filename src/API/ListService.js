@@ -10,6 +10,10 @@ export default class ListService{
         });
         return res;
     }
+    static async getListById(id){
+        const res = await axios.get('https://jsonplaceholder.typicode.com/posts/' + id);
+        return res.data
+    }
     static async getCurrency(){
         const res = await axios.get('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
         return res.data

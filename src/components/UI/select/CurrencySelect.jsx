@@ -56,7 +56,7 @@ const CurrencySelect = () => {
                     isMoreThanPrevious: checkRates(latestCurrency)
                 }
                 setCurrencyArr(arr => [curr, ...arr]);
-            }, 2000);
+            }, 1000);
             return () => clearInterval(myInterval.current)
         }
     }, [currency, currencyArr])
@@ -80,7 +80,6 @@ const CurrencySelect = () => {
                 className={classes.mySelect}
                 onChange={(e) => {
                     saveArr();
-                    // setSavedInNew(e);
                     setCurrency(e.target.value);
                     setCurrencyArr([]);
                 }}

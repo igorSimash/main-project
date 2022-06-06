@@ -1,0 +1,15 @@
+.pageDiv {
+    font-size: 17px;
+    border: solid 2px darkmagenta;
+    font-family: Arial, serif;
+    background-color: rgba(146,138,145,0.12);
+    border-radius: 8px;
+    height: 30px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*font-weight: bold;*/
+    margin-left: 3px;
+    margin-right: 3px;
+}

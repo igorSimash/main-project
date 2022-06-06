@@ -16,11 +16,11 @@ const Lists = () => {
     const [visibility, setVisibility] = useState(false);
     const [totalPages, setTotalPages] = useState(0);
     const [limit, setLimit] = useState(10);
+    const [tempLimit, setTempLimit] = useState(10)
     const [page, setPage] = useState(1);
     const [fetchLists, isLoading] = useFetch(async () => {
-        const res = await ListService.getLists();
+        const res = await ListService.getLists(limit, page);
         setLists(res.data);
-        console.log(res.headers['x-total-count']);
         setTotalPages(getPageCount(res.headers['x-total-count'], limit));
     })
 
@@ -35,7 +35,7 @@ const Lists = () => {
 
     useEffect ( () => {
         fetchLists();
-    }, [])
+    }, [page, limit])
 
 
     return (
@@ -53,10 +53,12 @@ const Lists = () => {
                 />
             </div>
             {isLoading
-                ?
-                <div style={{display: "flex", justifyContent: "center"}}><Loader/></div>
-                :
-                <ListPoster funcDelete={deleteList} title={'Список номер 1'} lists={sortedAndSearchedLists}/>
+                ? <div style={{display: "flex", justifyContent: "center"}}><Loader/></div>
+                : <ListPoster funcDelete={deleteList} title={'Список номер 1'} lists={sortedAndSearchedLists} page={page}
+                    nextPage={() => page < totalPages ? setPage(page + 1) : null}
+                    prevPage={() => page > 1 ? setPage(page - 1) : null}
+                    onChangeLimit={(e) => setTempLimit(e.target.value)}
+                    onClickLimit={() => setLimit(tempLimit)}/>
             }
         </div>
     );
