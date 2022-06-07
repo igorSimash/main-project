@@ -1,7 +1,7 @@
 import React from "react";
 import './styles/App.css'
 import DashBoard from "./components/UI/dashBoard/DashBoard";
-import AllRoutes from "./components/AllRoutes";
+import AllRoutes from "./components/routes/AllRoutes";
 
 
 function App() {

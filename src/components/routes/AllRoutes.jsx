@@ -1,10 +1,10 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom'
-import Calculator from "./calculatorComponents/Calculator";
-import CurrencySelect from "./currencyComponents/CurrencySelect";
-import ListDescription from "./listComponents/ListDescription";
-import Lists from "./listComponents/Lists";
-import CombineDifferentComponents from "./differentComponents/CombineDifferentComponents";
+import Calculator from "../calculatorComponents/Calculator";
+import CurrencySelect from "../currencyComponents/CurrencySelect";
+import ListDescription from "../listComponents/ListDescription";
+import Lists from "../listComponents/Lists";
+import CombineDifferentComponents from "../differentComponents/CombineDifferentComponents";
 
 const AllRoutes = () => {
     return (
