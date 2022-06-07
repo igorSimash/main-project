@@ -44,7 +44,7 @@ const Lists = () => {
         <div>
             <div className={classes.listRedactors}>
                 <MyButton onClick={() => setVisibility(true)}>
-                    Вставити
+                    Insert
                 </MyButton>
                 <Popup isVisible={visibility} setVisibility={setVisibility}>
                     <ListForm funcCreate={creatList}/>
@@ -65,7 +65,7 @@ const Lists = () => {
                     setTempLimit,
                     totalPages
                 }}>
-                    <ListPoster funcDelete={deleteList} title={'Список номер 1'} lists={sortedAndSearchedLists}/>
+                    <ListPoster funcDelete={deleteList} title={'List №1'} lists={sortedAndSearchedLists}/>
                 </ListContext.Provider>
             }
         </div>

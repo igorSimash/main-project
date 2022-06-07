@@ -9,12 +9,12 @@ const ListFilter = ({filter, setFilter}) => {
             <ListSelect
                 value={filter.sort}
                 onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
-                defaultOption="Без сортування"
-                options={[{value: 'title', name: 'Сортування по заголовку'},
-                    {value: 'body', name: 'Сортування по опису'}]}
+                defaultOption="Without sorting"
+                options={[{value: 'title', name: 'Sort by title'},
+                    {value: 'body', name: 'Sort by description'}]}
             />
             <MyInput
-                placeholder='Пошук...'
+                placeholder='Search...'
                 value={filter.params}
                 onChange={e => setFilter({...filter, params: e.target.value})}
             />

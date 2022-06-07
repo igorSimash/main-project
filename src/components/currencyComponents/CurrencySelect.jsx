@@ -64,13 +64,13 @@ const CurrencySelect = () => {
 
     const setH1 = () => {
         if (currency === "EUR") {
-            return "Курс Євро"
+            return "Euro"
         } else if (currency === "USD") {
-            return "Курс Долара"
+            return "Dollar"
         } else if (currency === "PLN") {
-            return "Курс Злотого"
+            return "Zloty"
         } else {
-            return "Оберіть валюту"
+            return "Choose a currency"
         }
     }
 
@@ -85,20 +85,21 @@ const CurrencySelect = () => {
                 }}
                 value={currency}
             >
-                <option disabled value="">Обрати валюту</option>
-                <option value="USD">Долар США</option>
-                <option value="EUR">Євро</option>
-                <option value="PLN">Злотий</option>
+                <option disabled value="">Choose a currency</option>
+                <option value="USD">Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="PLN">Zloty</option>
             </select>
             <MyButton onClick={() => clearInterval(myInterval.current)}>Stop</MyButton>
             <MyButton onClick={() => {
                 clearInterval(myInterval.current);
                 setCurrencyArr([]);
-            }}>Clear
+            }}>
+                Clear
             </MyButton>
             <h2>{setH1()}</h2>
-            <th>Курс</th>
-            <th>Час</th>
+            <th>Rate</th>
+            <th>Time</th>
             {currencyArr.map((selectedCurrency) =>
                 <CurrencyTable latestCurrency={selectedCurrency.currentCurrency} time={selectedCurrency.time}
                                isMoreThanPrevious={selectedCurrency.isMoreThanPrevious} key={Math.random()}/>

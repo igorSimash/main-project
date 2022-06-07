@@ -6,7 +6,7 @@ import classes from "./List.module.css"
 
 const ListPoster = ({lists, title, funcDelete}) => {
     if (!lists.length) {
-        return <h1 style={{color: 'red',}}>Список пустий</h1>
+        return <h1 style={{color: 'red',}}>List is empty</h1>
     }
 
     return (

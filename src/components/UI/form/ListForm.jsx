@@ -21,13 +21,13 @@ const ListForm = ({funcCreate}) => {
                 value={list.title}
                 onChange={e => setList({...list, title: e.target.value})}
                 type="text"
-                placeholder={"Назва"}/>
+                placeholder={"Title"}/>
             <MyInput
                 value={list.body}
                 onChange={e => setList({...list, body: e.target.value})}
                 type="text"
-                placeholder={"Опис"}/>
-            <MyButton onClick={addNewList}>Вставити</MyButton>
+                placeholder={"Description"}/>
+            <MyButton onClick={addNewList}>Insert</MyButton>
         </form>
     );
 };

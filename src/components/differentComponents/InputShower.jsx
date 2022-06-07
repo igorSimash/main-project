@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import MyInput from "../UI/input/MyInput";
 
 const InputShower = () => {
-    const [text, setText] = useState('Текст.')
+    const [text, setText] = useState('0 symbols')
     let showInputInfo = (event) => {
         let value = event.target.value;
-        setText(`${value} (${value.length} символів)`)
+        setText(`${value} (${value.length} symbols)`)
     }
 
     return (
