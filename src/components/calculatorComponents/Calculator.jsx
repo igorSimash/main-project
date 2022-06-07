@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import classes from "./Calculator.module.css"
 
 const Calculator = () => {
     const [input, setInput] = useState('0');
@@ -7,8 +8,8 @@ const Calculator = () => {
     const [isCounted, setIsCounted] = useState(false);
     const writeSymbols = (e) => {
         if ((data.charAt(data.length - 1) === '.' && e.target.innerHTML === '.')
-        || (data.length === 0 && e.target.innerHTML === '.')
-        || (actionClicked && e.target.innerHTML === '.'))
+            || (data.length === 0 && e.target.innerHTML === '.')
+            || (actionClicked && e.target.innerHTML === '.'))
             return;
         if (input.charAt(0) === '0' && input.length === 1) {
             setData(e.target.innerHTML);
@@ -20,16 +21,15 @@ const Calculator = () => {
             setInput('0.');
             return;
         }
-        if (isCounted){
+        if (isCounted) {
             setInput(e.target.innerHTML);
             setData(e.target.innerHTML);
             setIsCounted(false);
             return;
         }
-        if (!actionClicked){
+        if (!actionClicked) {
             setInput(input + e.target.innerHTML);
-        }
-        else{
+        } else {
             setInput(e.target.innerHTML);
             setActionClicked(false);
         }
@@ -38,8 +38,7 @@ const Calculator = () => {
     const getAction = (e) => {
         if (!actionClicked && data) {
             setData(data + e.target.innerHTML);
-        }
-        else {
+        } else {
             setData(data.replace(/.$/, e.target.innerHTML))
         }
         setActionClicked(true);
@@ -74,34 +73,34 @@ const Calculator = () => {
     }
 
     return (
-        <div className={"calculator"}>
-            <div className={"screen"}>
+        <div className={classes.calculator}>
+            <div className={classes.screen}>
                 {input}
             </div>
-            <div  className={"buttons"}>
-                <div onClick={clearAll} className={"btn clearAll light"}>AC</div>
-                <div onClick={clearOne} className={"btn clear light"}>C</div>
-                <div className={"btn percent light"}>%</div>
-                <div onClick={getAction} className={"btn division orange"}>/</div>
+            <div className={classes.buttons}>
+                <div onClick={clearAll} className={`${classes.btn} clearAll ${classes.light}`}>AC</div>
+                <div onClick={clearOne} className={`${classes.btn} clear ${classes.light}`}>C</div>
+                <div className={`${classes.btn} percent ${classes.light}`}>%</div>
+                <div onClick={getAction} className={`${classes.btn} division ${classes.orange}`}>/</div>
 
-                <div onClick={writeSymbols} className={"btn seven"}>7</div>
-                <div onClick={writeSymbols} className={"btn eight"}>8</div>
-                <div onClick={writeSymbols} className={"btn nine"}>9</div>
-                <div onClick={getAction} className={"btn multiply orange"}>*</div>
+                <div onClick={writeSymbols} className={`${classes.btn} seven`}>7</div>
+                <div onClick={writeSymbols} className={`${classes.btn} eight`}>8</div>
+                <div onClick={writeSymbols} className={`${classes.btn} nine`}>9</div>
+                <div onClick={getAction} className={`${classes.btn} multiply ${classes.orange}`}>*</div>
 
-                <div onClick={writeSymbols} className={"btn four"}>4</div>
-                <div onClick={writeSymbols} className={"btn five"}>5</div>
-                <div onClick={writeSymbols} className={"btn six"}>6</div>
-                <div onClick={getAction} className={"btn minus orange"}>-</div>
+                <div onClick={writeSymbols} className={`${classes.btn} four`}>4</div>
+                <div onClick={writeSymbols} className={`${classes.btn} five`}>5</div>
+                <div onClick={writeSymbols} className={`${classes.btn} six`}>6</div>
+                <div onClick={getAction} className={`${classes.btn} minus ${classes.orange}`}>-</div>
 
-                <div onClick={writeSymbols} className={"btn one"}>1</div>
-                <div onClick={writeSymbols} className={"btn two"}>2</div>
-                <div onClick={writeSymbols} className={"btn three"}>3</div>
-                <div onClick={getAction} className={"btn plus orange"}>+</div>
+                <div onClick={writeSymbols} className={`${classes.btn} one`}>1</div>
+                <div onClick={writeSymbols} className={`${classes.btn} two`}>2</div>
+                <div onClick={writeSymbols} className={`${classes.btn} three`}>3</div>
+                <div onClick={getAction} className={`${classes.btn} plus ${classes.orange}`}>+</div>
 
-                <div onClick={writeSymbols} className={"btn zero"}>0</div>
-                <div onClick={writeSymbols} className={"btn dot"}>.</div>
-                <div onClick={count} className={"btn equal orange"}>=</div>
+                <div onClick={writeSymbols} className={`${classes.btn} ${classes.zero} zero`}>0</div>
+                <div onClick={writeSymbols} className={`${classes.btn} dot`}>.</div>
+                <div onClick={count} className={`${classes.btn} equal ${classes.orange}`}>=</div>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ const ListForm = ({funcCreate}) => {
 
     const addNewList = (e) => {
         e.preventDefault();
-        if(!list.title || !list.body) return;
+        if (!list.title || !list.body) return;
         const newList = {
             ...list, id: Date.now()
         };
@@ -20,7 +20,7 @@ const ListForm = ({funcCreate}) => {
             <MyInput
                 value={list.title}
                 onChange={e => setList({...list, title: e.target.value})}
-                type ="text"
+                type="text"
                 placeholder={"Назва"}/>
             <MyInput
                 value={list.body}

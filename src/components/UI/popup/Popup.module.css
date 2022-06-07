@@ -1,15 +1,15 @@
-.popup{
+.popup {
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     display: none;
-    background: rgb(0,0,0,0.5);
+    background: rgb(0, 0, 0, 0.5);
     z-index: 2;
 }
 
-.popupContent{
+.popupContent {
     padding: 25px;
     background: white;
     border-radius: 15px;

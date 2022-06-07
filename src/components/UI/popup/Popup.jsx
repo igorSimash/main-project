@@ -4,7 +4,7 @@ import classes from './Popup.module.css';
 const Popup = ({children, isVisible, setVisibility}) => {
 
     const currClasses = [classes.popup]
-    if(isVisible){
+    if (isVisible) {
         currClasses.push(classes.active)
     }
 

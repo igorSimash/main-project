@@ -1,0 +1,62 @@
+.calculator {
+    background: black;
+    height: 400px;
+    width: 300px;
+    margin-top: 30px;
+    border: solid gray 2px;
+    border-radius: 3%;
+    z-index: 0;
+}
+
+.screen {
+    height: 100px;
+    display: grid;
+    justify-content: end;
+    color: white;
+    padding: 10px;
+    align-items: end;
+    font-size: 250%;
+    font-family: Arial, serif;
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas:
+    "clearAll clear percent division"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 4px;
+    justify-items: center;
+}
+
+.btn {
+    color: white;
+    background: rgba(71, 68, 70, 0.82);
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1rem;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-family: Arial, serif;
+    font-weight: bold;
+}
+
+.btn.zero {
+    width: 100%;
+    border-radius: 35px;
+    grid-area: zero;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.light {
+    background-color: gray;
+    color: black;
+}

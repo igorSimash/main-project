@@ -1,29 +1,31 @@
-.myButton{
+.myButton {
     color: black;
     border-radius: 7px;
     border: solid 2px darkmagenta;
     height: 30px;
     width: 100px;
     font-size: 14px;
-    background-color: rgba(146,138,145,0.12);
+    background-color: rgba(146, 138, 145, 0.12);
     cursor: pointer;
     font-weight: 500;
     font-family: Arial, serif;
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
     margin-left: 10px;
 }
-.myButton:hover, .roundButton:hover{
+
+.myButton:hover, .roundButton:hover {
     color: white;
     background-color: darkmagenta;
 }
-.roundButton{
+
+.roundButton {
     border-radius: 50%;
     width: 35px;
     height: 35px;
     font-size: 14px;
     border: solid 2px darkmagenta;
     font-family: Arial, serif;
-    background-color: rgba(146,138,145,0.12);
+    background-color: rgba(146, 138, 145, 0.12);
     cursor: pointer;
     font-weight: 900;
     transition: background-color 200ms ease-in-out, color 200ms ease-in-out;

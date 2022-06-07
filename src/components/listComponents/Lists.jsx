@@ -1,14 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import MyButton from "./UI/button/MyButton";
-import Popup from "./UI/popup/Popup";
-import ListForm from "./UI/form/ListForm";
 import ListFilter from "./ListFilter";
-import Loader from "./UI/loader/Loader";
 import ListPoster from "./ListPoster";
-import {useFetch} from "../hooks/useFetch";
-import ListService from "../API/ListService";
-import {useLists} from "../hooks/useLists";
-import {getPageCount} from "./utils/lists";
+import {useFetch} from "../../hooks/useFetch";
+import ListService from "../../API/ListService";
+import {getPageCount} from "../utils/lists";
+import {useLists} from "../../hooks/useLists";
+import ListForm from "../UI/form/ListForm";
+import Popup from "../UI/popup/Popup";
+import MyButton from "../UI/button/MyButton";
+import {ListContext} from "../context/context";
+import Loader from "../UI/loader/Loader";
+import classes from "./List.module.css"
 
 const Lists = () => {
     const [lists, setLists] = useState([]);
@@ -33,14 +35,14 @@ const Lists = () => {
 
     const deleteList = (list) => setLists(lists.filter(l => l.id !== list.id))
 
-    useEffect ( () => {
+    useEffect(() => {
         fetchLists();
     }, [page, limit])
 
 
     return (
         <div>
-            <div className={'listRedactors'}>
+            <div className={classes.listRedactors}>
                 <MyButton onClick={() => setVisibility(true)}>
                     Вставити
                 </MyButton>
@@ -54,11 +56,17 @@ const Lists = () => {
             </div>
             {isLoading
                 ? <div style={{display: "flex", justifyContent: "center"}}><Loader/></div>
-                : <ListPoster funcDelete={deleteList} title={'Список номер 1'} lists={sortedAndSearchedLists} page={page}
-                    nextPage={() => page < totalPages ? setPage(page + 1) : null}
-                    prevPage={() => page > 1 ? setPage(page - 1) : null}
-                    onChangeLimit={(e) => setTempLimit(e.target.value)}
-                    onClickLimit={() => setLimit(tempLimit)}/>
+                :
+                <ListContext.Provider value={{
+                    page,
+                    setPage,
+                    setLimit,
+                    tempLimit,
+                    setTempLimit,
+                    totalPages
+                }}>
+                    <ListPoster funcDelete={deleteList} title={'Список номер 1'} lists={sortedAndSearchedLists}/>
+                </ListContext.Provider>
             }
         </div>
     );

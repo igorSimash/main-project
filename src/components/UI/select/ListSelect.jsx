@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './ListSelect.module.css'
+
 const ListSelect = ({options, defaultOption, value, onChange}) => {
     return (
         <select
@@ -8,7 +9,7 @@ const ListSelect = ({options, defaultOption, value, onChange}) => {
             onChange={event => onChange(event.target.value)}>
             <option disabled value="">{defaultOption}</option>
             {options.map(option =>
-                <option key={option.value} value = {option.value}>{option.name}</option>
+                <option key={option.value} value={option.value}>{option.name}</option>
             )}
         </select>
     );

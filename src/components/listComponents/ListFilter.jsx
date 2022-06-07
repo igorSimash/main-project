@@ -1,6 +1,7 @@
-import React from 'react';
-import ListSelect from "./UI/select/ListSelect";
-import MyInput from "./UI/input/MyInput";
+import react from 'react';
+import ListSelect from "../UI/select/ListSelect";
+import MyInput from "../UI/input/MyInput";
+
 
 const ListFilter = ({filter, setFilter}) => {
     return (
@@ -10,7 +11,7 @@ const ListFilter = ({filter, setFilter}) => {
                 onChange={selectedSort => setFilter({...filter, sort: selectedSort})}
                 defaultOption="Без сортування"
                 options={[{value: 'title', name: 'Сортування по заголовку'},
-                    {value: 'body', name:  'Сортування по опису'}]}
+                    {value: 'body', name: 'Сортування по опису'}]}
             />
             <MyInput
                 placeholder='Пошук...'

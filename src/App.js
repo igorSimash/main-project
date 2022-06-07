@@ -5,12 +5,12 @@ import AllRoutes from "./components/AllRoutes";
 
 
 function App() {
-  return (
-    <div className="App">
-        <DashBoard/>
-        <AllRoutes/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <DashBoard/>
+            <AllRoutes/>
+        </div>
+    );
 }
 
 export default App;

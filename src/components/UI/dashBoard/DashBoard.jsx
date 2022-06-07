@@ -1,11 +1,7 @@
 import React from 'react';
 import classes from './DashBoard.module.css'
-import {Router, Routes, Link, Route} from "react-router-dom";
-import Calculator from "../../Calculator";
-import CurrencySelect from "../select/CurrencySelect";
-import App from "../../../App";
-import Lists from "../../Lists";
-import Counter from "../../Counter";
+import {Link} from "react-router-dom";
+
 const DashBoard = () => {
     return (
         <>
@@ -20,7 +16,7 @@ const DashBoard = () => {
                         <Link to={"/lists"}>Lists</Link>
                         <Link to={"/calculator"}>Calculator</Link>
                         <Link to={"/currency"}>Currency</Link>
-                        <Link to={"/counter"}>Counter</Link>
+                        <Link to={"/different"}>Different</Link>
                     </nav>
                 </header>
             </div>

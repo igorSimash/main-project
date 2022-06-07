@@ -1,9 +1,9 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import classes from "./ListSelect.module.css";
-import ListService from "../../../API/ListService";
-import {TaskTimer} from "tasktimer";
-import CurrencyTable from "../../CurrencyTable";
-import MyButton from "../button/MyButton";
+import selectClasses from "../UI/select/ListSelect.module.css";
+import ListService from "../../API/ListService";
+import CurrencyTable from "./CurrencyTable";
+import MyButton from "../UI/button/MyButton";
+import classes from "./Currency.module.css"
 
 const CurrencySelect = () => {
     const [currency, setCurrency] = useState('');
@@ -77,7 +77,7 @@ const CurrencySelect = () => {
     return (
         <div>
             <select
-                className={classes.mySelect}
+                className={selectClasses.mySelect}
                 onChange={(e) => {
                     saveArr();
                     setCurrency(e.target.value);
