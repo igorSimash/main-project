@@ -1,0 +1,48 @@
+.mainDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    user-select: none;
+}
+
+.image {
+    height: 400px;
+    width: 700px;
+    border-radius: 16px;
+    min-width: 100%;
+}
+
+.rightArrow {
+    position: absolute;
+    right: 330px;
+    z-index: 5;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+
+.leftArrow {
+    position: absolute;
+    left: 330px;
+    z-index: 5;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 300ms ease;
+}
+
+.slide {
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.slideActive {
+    opacity: 1;
+    transition: 1s;
+    transform: scale(1.1);
+}
+
+.leftArrow:hover,
+.rightArrow:hover {
+    color: #403f3f;
+}

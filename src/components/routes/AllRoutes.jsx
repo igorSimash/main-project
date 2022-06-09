@@ -5,10 +5,12 @@ import CurrencySelect from "../currencyComponents/CurrencySelect";
 import ListDescription from "../listComponents/ListDescription";
 import Lists from "../listComponents/Lists";
 import CombineDifferentComponents from "../differentComponents/CombineDifferentComponents";
+import Carousel from "../imageCarousel/Carousel";
 
 const AllRoutes = () => {
     return (
         <Routes>
+            <Route path="/" element={<Carousel/>}/>
             <Route path="/lists" element={<Lists/>}/>
             <Route path="/calculator" element={<Calculator/>}/>
             <Route path="/currency" element={<CurrencySelect/>}/>
