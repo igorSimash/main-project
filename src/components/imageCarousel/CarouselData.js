@@ -29,4 +29,11 @@ export const images = [
         wikiImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/BMW_G07_IMG_2484.jpg/375px-BMW_G07_IMG_2484.jpg",
         link: "https://motorcar.com.ua/wp-content/uploads/2022/04/bmw-x7-2022-13.jpg"
     },
+    {
+        name: "Renault Laguna 3",
+        link: "https://i.infocar.ua/i/12/1561/1200x630.jpg",
+        wiki: "Автомобілі середнього класу (Клас D), що виробляються французькою компанією Renault з 1994 року.",
+        wikiImg: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Renault_Laguna_Grandtour_GT_dCi_180_FAP_%28III%2C_Facelift%29_%E2%80%93_Frontansicht_%281%29%2C_9._April_2011%2C_D%C3%BCsseldorf.jpg/375px-Renault_Laguna_Grandtour_GT_dCi_180_FAP_%28III%2C_Facelift%29_%E2%80%93_Frontansicht_%281%29%2C_9._April_2011%2C_D%C3%BCsseldorf.jpg"
+
+    }
 ]

@@ -16,7 +16,6 @@
 .rightArrow {
     position: relative;
     left: 850px;
-    z-index: 5;
     font-size: 3rem;
     cursor: pointer;
     transition: color 300ms ease;
@@ -25,7 +24,6 @@
 .leftArrow {
     position: relative;
     right: 54px;
-    z-index: 5;
     font-size: 3rem;
     cursor: pointer;
     transition: color 300ms ease;
