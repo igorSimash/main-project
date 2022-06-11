@@ -14,8 +14,8 @@
 }
 
 .rightArrow {
-    position: absolute;
-    right: 330px;
+    position: relative;
+    left: 850px;
     z-index: 5;
     font-size: 3rem;
     cursor: pointer;
@@ -23,8 +23,8 @@
 }
 
 .leftArrow {
-    position: absolute;
-    left: 330px;
+    position: relative;
+    right: 54px;
     z-index: 5;
     font-size: 3rem;
     cursor: pointer;
@@ -45,4 +45,31 @@
 .leftArrow:hover,
 .rightArrow:hover {
     color: #403f3f;
+}
+
+.imageName {
+    position: absolute;
+    background-color: white;
+    font-size: 15px;
+    width: 250px;
+    border-radius: 15px 15px 0 0 ;
+    z-index: 15 ;
+    height: auto;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.imageName img {
+    width: 250px;
+    height: 160px;
+    border-radius: 15px 15px 0 0 ;
+}
+.imageName strong {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 7px;
+}
+
+
+.imageName p {
+    margin: 5px 10px 10px 10px;
+    text-align: left;
 }

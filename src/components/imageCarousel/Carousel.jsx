@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import classes from './Carousel.module.css'
 import {FaArrowCircleRight, FaArrowCircleLeft} from "react-icons/fa"
-
 import {images} from "./CarouselData";
-import MyButton from "../UI/button/MyButton";
 
 const Carousel = () => {
     const [currentImg, setCurrentImg] = useState(0);
+    const [nameDisplay, setNameDisplay] = useState("none");
+    const [coordinates, setCoordinates] = useState({x: 0, y: 0})
     const length = images.length;
-    console.log(currentImg);
 
     const nextImg = () => {
         setCurrentImg(currentImg === length - 1 ? 0 : currentImg + 1);
@@ -16,6 +15,18 @@ const Carousel = () => {
 
     const prevImg = () => {
         setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1);
+    }
+
+    const getImgName = () => {
+        setNameDisplay("grid");
+    }
+
+    const hideImgName = () => {
+        setNameDisplay("none");
+    }
+
+    const getCoordinates = (event) => {
+        setCoordinates({x: event.clientX - 500, y: event.clientY - 150})
     }
 
     return (
@@ -28,7 +39,16 @@ const Carousel = () => {
                         <div
                             className={index === currentImg ? classes.slideActive : classes.slide}
                             key={index}>
-                            {index === currentImg && (<img className={`${classes.image}`} src={img.link} alt="Car"/>)}
+                            {index === currentImg && (<div>
+                                <img className={classes.image} src={img.link} onMouseMove={getCoordinates}
+                                     onMouseOver={getImgName} onMouseOut={hideImgName} alt="Car"/>
+                                <div style={{display: nameDisplay, top: coordinates.y, left: coordinates.x}}
+                                     className={classes.imageName}>
+                                    <img src={img.wikiImg} alt=""/>
+                                    <strong>{img.name}</strong>
+                                    <p>{img.wiki}</p>
+                                </div>
+                            </div>)}
                         </div>
 
                     )
