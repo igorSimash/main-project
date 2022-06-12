@@ -2,4 +2,18 @@
     display: flex;
 }
 
+.list-enter {
+    transform: translateX(-500px);
+}
+.list-enter-active {
+    transform: translateX(0px);
+    transition: all 700ms ease-in;
+}
+.list-exit {
+    transform: translateX(0px);
+}
+.list-exit-active {
+    transform: translateX(-1000px);
+    transition: all 700ms ease-in;
 
+}

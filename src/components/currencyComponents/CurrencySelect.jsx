@@ -92,8 +92,8 @@ const CurrencySelect = () => {
             </select>
             <MyButton onClick={() => clearInterval(myInterval.current)}>Stop</MyButton>
             <MyButton onClick={() => {
-                clearInterval(myInterval.current);
                 setCurrencyArr([]);
+                clearInterval(myInterval.current);
             }}>
                 Clear
             </MyButton>

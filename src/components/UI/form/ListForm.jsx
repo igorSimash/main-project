@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import MyInput from "../input/MyInput";
 import MyButton from "../button/MyButton";
 
-const ListForm = ({funcCreate}) => {
+const ListForm = ({funcCreate, id}) => {
     const [list, setList] = useState({title: '', body: ''});
 
     const addNewList = (e) => {
         e.preventDefault();
         if (!list.title || !list.body) return;
         const newList = {
-            ...list, id: Date.now()
+            ...list, id: id - 1
         };
         funcCreate(newList);
         setList({title: '', body: ''});

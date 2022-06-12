@@ -18,12 +18,7 @@ const ListPoster = ({lists, title, funcDelete}) => {
                     <CSSTransition
                         key={list.id}
                         timeout={500}
-                        classNames={{
-                            enterActive: classes.listEnterActive,
-                            enterDone: classes.listEnter,
-                            exitActive: classes.listExitActive,
-                            exitDone: classes.listExit
-                        }}
+                        classNames={"list"}
                     >
                         <ListMaker funcDelete={funcDelete} num={index + 1} list={list}/>
                     </CSSTransition>

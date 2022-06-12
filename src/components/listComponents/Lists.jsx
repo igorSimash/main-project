@@ -25,11 +25,12 @@ const Lists = () => {
         setLists(res.data);
         setTotalPages(getPageCount(res.headers['x-total-count'], limit));
     })
-
     const creatList = (newList) => {
-        setLists([...lists, newList]);
+        setLists([newList, ...lists]);
         setVisibility(false);
     };
+
+    const lastId = lists.length > 0 ? lists[0].id : 0
 
     const sortedAndSearchedLists = useLists(filter.sort, lists, filter.params)
 
@@ -47,7 +48,7 @@ const Lists = () => {
                     Insert
                 </MyButton>
                 <Popup isVisible={visibility} setVisibility={setVisibility}>
-                    <ListForm funcCreate={creatList}/>
+                    <ListForm funcCreate={creatList} id={lastId}/>
                 </Popup>
                 <ListFilter
                     filter={filter}

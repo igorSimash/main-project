@@ -15,25 +15,6 @@
     margin: 5px;
 }
 
-.listEnter {
-    transform: translateX(-500px);
-}
-
-.listEnterActive {
-    transform: translateX(0px);
-    transition: all 700ms ease-in;
-}
-
-.listExit {
-    transform: translateX(0px);
-}
-
-.listExitActive {
-    transform: translateX(-500px);
-    transition: all 700ms ease-in;
-
-}
-
 .listDescription {
     display: flex;
     font-size: 20px;
