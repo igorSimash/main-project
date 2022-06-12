@@ -45,29 +45,55 @@
     color: #403f3f;
 }
 
-.imageName {
+.imageDescription {
     position: absolute;
+    top: 0;
+    left: -320px;
     background-color: white;
     font-size: 15px;
     width: 250px;
-    border-radius: 15px 15px 0 0 ;
-    z-index: 15 ;
+    border-radius: 15px;
+    border: black solid thin;
+    z-index: 15;
     height: auto;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    transition: opacity 0s;
 }
-.imageName img {
+
+.imageDescription img {
     width: 250px;
     height: 160px;
-    border-radius: 15px 15px 0 0 ;
+    border-radius: 15px 15px 0 0;
 }
-.imageName strong {
+
+.imageDescription strong {
     font-size: 20px;
     text-align: center;
     margin-top: 7px;
 }
 
-
-.imageName p {
+.imageDescription p {
     margin: 5px 10px 10px 10px;
     text-align: left;
+}
+
+.decorTriangle {
+    font-size: 100px;
+    position: absolute;
+    top: 20px;
+    left: -84px;
+    color: #525252;
+}
+
+.decorTriangleBottom {
+    font-size: 100px;
+    position: absolute;
+    top: 235px;
+    left: -84px;
+    color: #525252;
+}
+
+.imageDescription a {
+    text-align: center;
+    margin: 0 0 10px 0;
 }

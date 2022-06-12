@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import classes from './Carousel.module.css'
 import {FaArrowCircleRight, FaArrowCircleLeft} from "react-icons/fa"
+import {AiFillCaretRight} from "react-icons/ai"
 import {images} from "./CarouselData";
 
 const Carousel = () => {
     const [currentImg, setCurrentImg] = useState(0);
     const [nameDisplay, setNameDisplay] = useState("none");
-    const [coordinates, setCoordinates] = useState({x: 0, y: 0})
     const length = images.length;
 
     const nextImg = () => {
@@ -15,18 +15,6 @@ const Carousel = () => {
 
     const prevImg = () => {
         setCurrentImg(currentImg === 0 ? length - 1 : currentImg - 1);
-    }
-
-    const getImgName = () => {
-        setNameDisplay("grid");
-    }
-
-    const hideImgName = () => {
-        setNameDisplay("none");
-    }
-
-    const getCoordinates = (event) => {
-        setCoordinates({x: event.clientX - 500, y: event.clientY - 150})
     }
 
     return (
@@ -39,18 +27,24 @@ const Carousel = () => {
                         <div
                             className={index === currentImg ? classes.slideActive : classes.slide}
                             key={index}>
-                            {index === currentImg && (<div>
-                                <img className={classes.image} src={img.link} onMouseMove={getCoordinates}
-                                     onMouseOver={getImgName} onMouseOut={hideImgName} alt="Car"/>
-                                <div style={{display: nameDisplay, top: coordinates.y, left: coordinates.x}}
-                                     className={classes.imageName}>
-                                    <img src={img.wikiImg} alt=""/>
-                                    <strong>{img.name}</strong>
-                                    <p>{img.wiki}</p>
+                            {index === currentImg && (<div onMouseOver={() => setNameDisplay('grid')}
+                                                           onMouseOut={() => setNameDisplay('none')}>
+                                <img className={classes.image} src={img.link} alt="Car"/>
+                                <div style={{display: nameDisplay}}>
+                                    <AiFillCaretRight className={classes.decorTriangle}/>
+                                    <AiFillCaretRight className={classes.decorTriangleBottom}/>
+                                    <div style={{display: nameDisplay}}
+                                         className={classes.imageDescription}
+                                         onMouseOver={() => setNameDisplay('grid')}
+                                         onMouseOut={() => setNameDisplay('none')}>
+                                        <img src={img.wikiImg} alt=""/>
+                                        <strong>{img.name}</strong>
+                                        <p>{img.wikiText}</p>
+                                        <a href={img.wikiURL} target="_blank">Continue reading</a>
+                                    </div>
                                 </div>
                             </div>)}
                         </div>
-
                     )
                 })
             }
